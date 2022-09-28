@@ -1,6 +1,5 @@
 .todoContainer {
   margin: 1rem;
-
   border: 1px solid gray;
   width: 540px;
   max-width: 540px;
@@ -14,10 +13,47 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
 
   .todoSearch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border-radius: 20px 20px 0 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+    form {
+      input {
+        font-size: 1rem;
+        border-radius: 20px 0 0 20px;
+        border: none;
+        padding: 0.5rem 1rem;
+        &:focus {
+          outline: none;
+        }
+      }
+      button {
+        font-size: 1rem;
+        border-radius: 0 20px 20px 0;
+        border: none;
+        font-size: 1rem;
+        padding: calc(0.5rem - 1px);
+        background-color: blue;
+        cursor: pointer;
+        border: 0.5px solid white;
+        color: white;
+
+        &:focus {
+          outline: none;
+        }
+        &:disabled {
+          background-color: #1d2c78;
+          color: #bbbbbb;
+          cursor: not-allowed;
+          border: none;
+          padding: 0.5rem;
+        }
+      }
+    }
   }
 
   .todoFooter {
@@ -33,6 +69,25 @@
   }
   .todoList {
     height: 100%;
-    padding: 0 2rem;
+    p {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      justify-content: center;
+    }
+    ul {
+      list-style: none;
+      overflow: hidden;
+      overflow-y: scroll;
+      height: 100%;
+      li {
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+      }
+      li:nth-child(odd) {
+        background-color: #b5d4f3;
+      }
+    }
   }
 }

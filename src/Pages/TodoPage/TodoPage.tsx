@@ -43,17 +43,19 @@ const TodoPage = () => {
       <div className="todoSearch">
         <h1>My Todo List:</h1>
         <form onSubmit={handleSubmit}>
-          <input
-            id="todo"
-            name="todo"
-            value={searchTxt}
-            type="text"
-            placeholder="Ex: Wash the dishes"
-            onChange={handleChange}
-          />
-          <button type="submit" disabled={searchTxt.trim() === ""}>
-            New task
-          </button>
+          <div>
+            <input
+              id="todo"
+              name="todo"
+              value={searchTxt}
+              type="text"
+              placeholder="Ex: Wash the dishes"
+              onChange={handleChange}
+            />
+            <button type="submit" disabled={searchTxt.trim() === ""}>
+              New task
+            </button>
+          </div>
         </form>
       </div>
       <div className="todoList">
@@ -68,10 +70,11 @@ const TodoPage = () => {
         )}
       </div>
       <div className="todoFooter">
-        {todoItems.length > 0 ? (
-          <p>You have {todoItems.length} tasks to do.</p>
-        ) : (
-          <p></p>
+        {todoItems.length === 1 && (
+          <p>You have {todoItems.length} task to do!</p>
+        )}
+        {todoItems.length > 1 && (
+          <p>You have {todoItems.length} tasks to do!</p>
         )}
       </div>
     </div>

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -31,6 +33,10 @@ body {
   align-items: center;
 }
 
-// :root {
-//   font-family: "";
-// }
+h1 {
+  font-size: 1.5rem;
+}
+
+:root {
+  font-family: "Roboto";
+}
