@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
 /*
     Parte 1
@@ -19,19 +19,21 @@ import React, { useEffect, useState } from "react";
 const TodoPage = () => {
   const [searchTxt, setSearchTxt] = useState<string>("");
   const [todoItems, setTodoItems] = useState<string[]>([]);
+
   useEffect(() => {
     const storageTodoItems = localStorage.getItem("todo");
     setTodoItems(storageTodoItems ? storageTodoItems.split(",") : []);
   }, []);
 
-  const handleSubmit = (ev: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (ev: FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
     const todoList: string[] = [...todoItems, searchTxt];
+    localStorage.setItem("todo", todoList.toString());
     setTodoItems(todoList);
     setSearchTxt("");
-    localStorage.setItem("todo", todoItems.toString());
   };
-  const handleChange = (ev: React.ChangeEvent<HTMLFormElement>) => {
+
+  const handleChange = (ev: ChangeEvent<HTMLInputElement>) => {
     setSearchTxt(ev.target.value);
   };
 
@@ -42,10 +44,11 @@ const TodoPage = () => {
         <form onSubmit={handleSubmit}>
           <input
             id="todo"
+            name="todo"
             value={searchTxt}
             type="text"
             placeholder="Ex: Wash the dishes"
-            onChange={() => handleChange}
+            onChange={handleChange}
           />
           <button type="submit" disabled={searchTxt.trim() === ""}>
             New task
