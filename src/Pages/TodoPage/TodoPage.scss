@@ -1,0 +1,38 @@
+.todoContainer {
+  margin: 1rem;
+
+  border: 1px solid gray;
+  width: 540px;
+  max-width: 540px;
+  max-height: calc(100% - 2rem);
+  height: 680px;
+  border-radius: 20px;
+  background-color: white;
+  -webkit-box-shadow: 0px 10px 13px -7px #160075,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #160075, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+
+  .todoSearch {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .todoFooter {
+    border-radius: 0 0 20px 20px;
+    height: 60px;
+  }
+
+  .todoSearch,
+  .todoFooter {
+    padding: 1rem 2rem;
+    background-color: blue;
+    color: white;
+  }
+  .todoList {
+    height: 100%;
+    padding: 0 2rem;
+  }
+}
