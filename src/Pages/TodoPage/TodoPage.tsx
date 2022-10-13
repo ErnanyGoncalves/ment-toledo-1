@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import  { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import "./TodoPage.scss";
 
 /*
@@ -43,7 +43,7 @@ const TodoPage = () => {
       <div className="todoSearch">
         <h1>My Todo List:</h1>
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className="formWrapper">
             <input
               id="todo"
               name="todo"
